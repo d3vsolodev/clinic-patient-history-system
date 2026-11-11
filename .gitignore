@@ -1,0 +1,25 @@
+# Environment configuration and local credentials
+.env
+.env.*
+!.env.example
+.secrets/
+secrets/
+*.local
+credentials.json
+application-local.properties
+
+# Private keys and local certificate stores
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+
+# Local patient data; keep the original file only on the developer machine
+/Clinic_System_1000_Data_10_Sheets.xlsx
+
+# Build artifacts
+backend-java/target/
+frontend/node_modules/
+frontend/dist/
