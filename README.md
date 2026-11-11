@@ -41,6 +41,19 @@ deleting the local database volume.
 `DB_URL` overrides the local host/port/database settings. Do not put credentials
 in a committed environment example, URL in source control, or frontend variables.
 
+## GitHub Pages frontend
+
+The GitHub Actions workflow builds and deploys the static frontend to GitHub Pages.
+In the repository's **Settings → Pages**, set the build and deployment source to
+**GitHub Actions**. The resulting site is served at
+`https://d3vsolodev.github.io/clinic-patient-history-system/`.
+
+GitHub Pages hosts only the React frontend; it does not run the Spring Boot API or
+database. Until a backend is deployed, the frontend cannot load or save application
+data. Before deploying a backend, set the repository Actions variable
+`VITE_API_URL` to its HTTPS `/api` URL and configure that backend's CORS and
+`CLIENT_URL` to allow the Pages site.
+
 ## Database migration status
 
 The Java datasource and JDBC driver now target PostgreSQL. The existing SQL files
